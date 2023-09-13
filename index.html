@@ -13,17 +13,19 @@
 </head>
 <body>
 
-<div id="app" class="d-flex flex-column min-vh-100">
-    <div class="row mx-auto py-3">
-      <div class="card m-3 p-5">
-        <h5 class="card-title">Vixen Media</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Model Search</h6>
-        <input v-model="pcModel" class="form-control mt-5" type="search">
-        <button @click="openPremiumContentPortals" class="btn btn-danger mt-3 font-weight-bold" type="submit">Open</button>
-        <button @click="openOtherSites" class="btn btn-outline-danger mt-3 font-weight-bold">Other Sites</button>
-        <!-- Add a button to request popup permission -->
-        <button @click="requestPopupPermission" class="btn btn-primary mt-3 font-weight-bold">Request Popup Permission</button>
-      </div>
+<div id="app" class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4">
+                <h5 class="card-title text-center mb-4">Vixen Media Model Search</h5>
+                <div class="form-group">
+                    <input v-model="pcModel" class="form-control" type="search" placeholder="Search for a model">
+                </div>
+                <button @click="openPremiumContentPortals" class="btn btn-danger btn-block mt-3">Open Premium Content</button>
+                <button @click="openOtherSites" class="btn btn-outline-danger btn-block mt-3">Other Sites</button>
+                <button @click="requestPopupPermission" class="btn btn-primary btn-block mt-3">Request Popup Permission</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -88,7 +90,6 @@
 
         this.pcModel = "";
       },
-      // Function to request popup permission
       requestPopupPermission() {
         const newWindow = window.open('', '_blank');
         if (newWindow) {
