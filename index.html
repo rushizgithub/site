@@ -73,19 +73,19 @@
           },
           {
             url: "https://sxyprn.com/",
-            path: "", // Remove "tag" and add ".html" at the end
+            path: "",
           },
           {
             url: "https://mat6tube.com/",
-            path: "video", // Remove "tag" and add ".html" at the end
+            path: "video",
           },
           {
             url: "https://www.fpo.xxx/",
-            path: "models", // Remove "tag" and add ".html" at the end
+            path: "models",
           },
           {
             url: "https://www.xfreehd.com/",
-            path: "search?search_query=", // Remove "tag" and add ".html" at the end
+            path: "search?search_query=",
           },  
         ];
 
@@ -95,6 +95,8 @@
             path = pcModelKebab ? `${pcModelKebab}.html` : "";
           } else if (site.url === "https://www.xfreehd.com/") {
             path = pcModelKebab ? `${pcModelKebab}.&search_type=videos&t=a&o=lg` : "";
+          } else if (site.url === "https://www.fpo.xxx/") {
+            path = pcModelKebab ? `${pcModelKebab}./` : "";
           } else {
             path = pcModelKebab ? `${site.path}/${pcModelKebab}` : "";
           }
