@@ -82,6 +82,10 @@
           {
             url: "https://www.fpo.xxx/",
             path: "models", // Remove "tag" and add ".html" at the end
+          },
+          {
+            url: "https://www.xfreehd.com/",
+            path: "search?search_query=", // Remove "tag" and add ".html" at the end
           },  
         ];
 
@@ -89,6 +93,8 @@
           let path = site.path;
           if (site.url === "https://sxyprn.com/") {
             path = pcModelKebab ? `${pcModelKebab}.html` : "";
+          } else if (site.url === "https://www.xfreehd.com/") {
+            path = pcModelKebab ? `${pcModelKebab}.&search_type=videos&t=a&o=lg` : "";
           } else {
             path = pcModelKebab ? `${site.path}/${pcModelKebab}` : "";
           }
