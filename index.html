@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<div id="app" class="container mt-5">
+<div id="app" :class="{ 'dark-mode': isDarkMode }" class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card p-4">
@@ -24,16 +24,88 @@
                 <button @click="openPremiumContentPortals" class="btn btn-danger btn-block mt-3">Open Premium Content</button>
                 <button @click="openOtherSites" class="btn btn-outline-danger btn-block mt-3">Other Sites</button>
                 <button @click="requestPopupPermission" class="btn btn-primary btn-block mt-3">Request Popup Permission</button>
+                <!-- Dark Mode Toggle Button -->
+                <label class="switch mt-3">
+                    <input type="checkbox" v-model="isDarkMode">
+                    <span class="slider round"></span>
+                </label>
+                <span class="dark-mode-label ml-2">Dark Mode</span>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+/* Light Mode Styles */
+#app {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* White text color */
+}
+
+.dark-mode-label {
+    color: #ffffff;
+}
+
+/* Toggle switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+</style>
 
 <script>
   new Vue({
     el: '#app',
     data: {
       pcModel: '',
+      isDarkMode: false, // Initially, set to false (light mode)
     },
     methods: {
       openUrl(url) {
