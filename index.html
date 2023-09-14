@@ -40,8 +40,6 @@
       },
       openPremiumContentPortals() {
         const pcModelKebab = this.pcModel.trim().replace(/\s+/g, "-");
-        const modelSegment = pcModelKebab ? "models/" : "videos";
-
         const portals = [
           "vixen.com",
           "tushy.com",
@@ -54,7 +52,7 @@
         ];
 
         portals.forEach((portal) => {
-          const url = `https://www.${portal}/${modelSegment}${pcModelKebab}`;
+          const url = `https://www.${portal}/${pcModelKebab}`;
           this.openUrl(url);
         });
 
@@ -63,44 +61,16 @@
       openOtherSites() {
         const pcModelKebab = this.pcModel.trim().replace(/\s+/g, "-") || "";
         const sites = [
-          {
-            url: "https://tube.perverzija.com/",
-            path: "stars",
-          },
-          {
-            url: "https://porndish.com/",
-            path: "tag",
-          },
-          {
-            url: "https://sxyprn.com/",
-            path: "",
-          },
-          {
-            url: "https://mat6tube.com/",
-            path: "video",
-          },
-          {
-            url: "https://www.fpo.xxx/",
-            path: "models",
-          },
-          {
-            url: "https://www.xfreehd.com/",
-            path: "search?search_query=",
-          },  
+          "https://tube.perverzija.com/stars/${pcModelKebab}",
+          "https://porndish.com/tag/${pcModelKebab}",
+          "https://sxyprn.com/${pcModelKebab}.html",
+          "https://mat6tube.com/video/${pcModelKebab}",
+          "https://www.fpo.xxx/${pcModelKebab}/",
+          "https://www.xfreehd.com/${pcModelKebab}&search_type=videos",
         ];
 
         sites.forEach((site) => {
-          let path = site.path;
-          if (site.url === "https://sxyprn.com/") {
-            path = pcModelKebab ? `${pcModelKebab}.html` : "";
-          } else if (site.url === "https://www.xfreehd.com/") {
-            path = pcModelKebab ? `${pcModelKebab}&search_type=videos` : "";
-          } else if (site.url === "https://www.fpo.xxx/") {
-            path = pcModelKebab ? `${pcModelKebab}/` : "";
-          } else {
-            path = pcModelKebab ? `${site.path}/${pcModelKebab}` : "";
-          }
-          this.openUrl(`${site.url}${path}`);
+          this.openUrl(site);
         });
 
         this.pcModel = "";
