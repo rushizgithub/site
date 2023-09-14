@@ -39,7 +39,7 @@
         window.open(url, Math.random());
       },
       openPremiumContentPortals() {
-        const pcModelKebab = this.pcModel.trim().replace(/\s+/g, "-");
+        const pcModelKebab = this.pcModel.trim().replace(/\s+/g, "-").toLowerCase();
         const portals = [
           "vixen.com",
           "tushy.com",
@@ -59,7 +59,7 @@
         this.pcModel = "";
       },
       openOtherSites() {
-  const pcModelKebab = this.pcModel.trim().replace(/\s+/g, "-") || "";
+  const pcModelKebab = this.pcModel.trim().replace(/\s+/g, "-").toLowerCase();
   const sites = [
     `https://tube.perverzija.com/stars/${pcModelKebab}`,
     `https://porndish.com/tag/${pcModelKebab}`,
