@@ -60,7 +60,8 @@
       },
       openOtherSites() {
   const originalPcModel = this.pcModel.trim();
-  const pcModelKebab = originalPcModel.replace(/\s+/g, "-").toLowerCase(); // Convert to lowercase
+  const pcModelKebab = originalPcModel.replace(/\s+/g, "-").toLowerCase();
+  const pcModelKebab1 = originalPcModel.replace(/\s+/g, "+").toLowerCase();        
   const sites = [
     `https://tube.perverzija.com/stars/${pcModelKebab}`,
     `https://porndish.com/tag/${pcModelKebab}`,
@@ -72,16 +73,15 @@
     `https://fuxporn.com/tags/${pcModelKebab}.html`,
     `https://goodporn.to/models/${pcModelKebab}/`,
     `https://pornxp.com/tags/${pcModelKebab}?sort=new`,
-    `https://www.pxxbay.com/?s=${pcModelKebab}`,
-    `https://whereismyporn.com/?s=${pcModelKebab}`,
+    `https://www.pxxbay.com/?s=${pcModelKebab1}`,
+    `https://whereismyporn.com/?s=${pcModelKebab1}`,
     `https://fullporner.com/pornstar/${pcModelKebab}`,
-    `https://www.pornhits.com/videos.php?p=1&s=d&ps=${pcModelKebab}`,
+    `https://www.pornhits.com/videos.php?p=1&s=d&ps=${pcModelKebab1}`,
     `https://porn4days.red/search/?s=${pcModelKebab}`,
     `https://www.pornhd3x.tv/pornstar/${pcModelKebab}`,
-    `https://www.sextu.com/pornstar/${pcModelKebab}/videos/1/`,
+    `https://www.sextu.com/pornstar/${pcModelKebab1}/videos/1/`,
     `https://www.mega-xxx.tv/tags/${pcModelKebab}/`,
-    `https://milfnut.com/actor/${pcModelKebab}-porn-videos/`,
-    `https://pornrips.to/?s=${pcModelKebab}`,
+    `https://pornrips.to/?s=${pcModelKebab1}`,
   ];
 
   sites.forEach((site) => {
