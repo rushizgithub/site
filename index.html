@@ -39,7 +39,8 @@
         window.open(url, Math.random());
       },
       openPremiumContentPortals() {
-        const pcModelKebab = this.pcModel.trim().replace(/\s+/g, "-").toLowerCase();
+        const originalPcModel = this.pcModel.trim();
+        const pcModelKebab = originalPcModel.replace(/\s+/g, "-").toLowerCase(); // Convert to lowercase
         const portals = [
           "vixen.com",
           "tushy.com",
@@ -56,10 +57,11 @@
           this.openUrl(url);
         });
 
-        this.pcModel = "";
+        this.pcModel = originalPcModel;
       },
       openOtherSites() {
-  const pcModelKebab = this.pcModel.trim().replace(/\s+/g, "-").toLowerCase();
+  const originalPcModel = this.pcModel.trim();
+  const pcModelKebab = originalPcModel.replace(/\s+/g, "-").toLowerCase(); // Convert to lowercase
   const sites = [
     `https://tube.perverzija.com/stars/${pcModelKebab}`,
     `https://porndish.com/tag/${pcModelKebab}`,
@@ -74,7 +76,7 @@
     this.openUrl(site);
   });
 
-  this.pcModel = "";
+  this.pcModel = originalPcModel;
 },
 
     },
