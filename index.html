@@ -59,22 +59,23 @@
         this.pcModel = "";
       },
       openOtherSites() {
-        const pcModelKebab = this.pcModel.trim().replace(/\s+/g, "-") || "";
-        const sites = [
-          "https://tube.perverzija.com/stars/${pcModelKebab}",
-          "https://porndish.com/tag/${pcModelKebab}",
-          "https://sxyprn.com/${pcModelKebab}.html",
-          "https://mat6tube.com/video/${pcModelKebab}",
-          "https://www.fpo.xxx/${pcModelKebab}/",
-          "https://www.xfreehd.com/${pcModelKebab}&search_type=videos",
-        ];
+  const pcModelKebab = this.pcModel.trim().replace(/\s+/g, "-") || "";
+  const sites = [
+    `https://tube.perverzija.com/stars/${pcModelKebab}`,
+    `https://porndish.com/tag/${pcModelKebab}`,
+    `https://sxyprn.com/${pcModelKebab}.html`,
+    `https://mat6tube.com/video/${pcModelKebab}`,
+    `https://www.fpo.xxx/${pcModelKebab}/`,
+    `https://www.xfreehd.com/${pcModelKebab}&search_type=videos`,
+  ];
 
-        sites.forEach((site) => {
-          this.openUrl(site);
-        });
+  sites.forEach((site) => {
+    this.openUrl(site);
+  });
 
-        this.pcModel = "";
-      },
+  this.pcModel = "";
+},
+
     },
   });
 </script>
